@@ -118,28 +118,6 @@ export default function AIStudyPanel({
     );
   };
 
-  const getFeedback = async () => {
-    if (!content.trim()) {
-      onResult({
-        result: "",
-        error: "Write some note content before requesting feedback.",
-        loading: false,
-        action: "",
-      });
-
-      return;
-    }
-
-    await runAI(
-      "feedback",
-      () =>
-        api.post("/ai/feedback", {
-          content,
-        }),
-      "AI Feedback"
-    );
-  };
-
   const askAssistant = async () => {
     if (!question.trim()) {
       onResult({
@@ -174,27 +152,27 @@ export default function AIStudyPanel({
   const isLoading = Boolean(activeAction);
 
   return (
-    <aside className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+    <aside className="min-w-0 rounded-3xl border border-white/10 bg-[#141821] p-5 text-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-6">
       {/* Header */}
-      <div className="mb-6 border-b border-slate-100 pb-5">
+      <div className="mb-6 border-b border-white/8 pb-5">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-start gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-lg text-indigo-600">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-violet-500/10 text-lg text-violet-300 ring-1 ring-inset ring-violet-400/20">
               ✦
             </div>
 
             <div>
-              <h2 className="text-base font-semibold text-slate-900">
+              <h2 className="text-base font-semibold text-white">
                 AI Study Assistant
               </h2>
 
               <p className="mt-1 text-xs leading-5 text-slate-400">
-                Use AI to understand, improve, and study your notes.
+                Generate notes, summarize content, or ask a question.
               </p>
             </div>
           </div>
 
-          <span className="shrink-0 rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-600">
+          <span className="shrink-0 rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-300 ring-1 ring-inset ring-emerald-400/20">
             Ready
           </span>
         </div>
@@ -203,7 +181,7 @@ export default function AIStudyPanel({
       {/* Generate Study Notes */}
       <section className="mb-6">
         <div className="mb-3">
-          <h3 className="text-sm font-semibold text-slate-900">
+          <h3 className="text-sm font-semibold text-white">
             Generate Study Notes
           </h3>
 
@@ -222,14 +200,14 @@ export default function AIStudyPanel({
                 ? `Using "${title}" or enter another topic`
                 : "e.g. JavaScript Event Bubbling"
             }
-            className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:bg-white focus:ring-4 focus:ring-indigo-50"
+            className="w-full min-w-0 rounded-2xl border border-white/10 bg-white/5 px-3.5 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-violet-400/40 focus:bg-white/8 focus:ring-4 focus:ring-violet-500/10"
           />
 
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_auto] lg:grid-cols-1 xl:grid-cols-[1fr_auto]">
             <select
               value={level}
               onChange={(event) => setLevel(event.target.value)}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-3 text-sm text-slate-700 outline-none transition focus:border-indigo-400 focus:bg-white focus:ring-4 focus:ring-indigo-50"
+              className="w-full rounded-2xl border border-white/10 bg-white/5 px-3.5 py-3 text-sm text-slate-200 outline-none transition focus:border-violet-400/40 focus:bg-white/8 focus:ring-4 focus:ring-violet-500/10"
             >
               <option value="Beginner">Beginner</option>
               <option value="Intermediate">Intermediate</option>
@@ -240,7 +218,7 @@ export default function AIStudyPanel({
               type="button"
               onClick={generateNotes}
               disabled={isLoading}
-              className="rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
+              className="rounded-2xl bg-violet-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-violet-400 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {activeAction === "generate-notes"
                 ? "Generating..."
@@ -253,7 +231,7 @@ export default function AIStudyPanel({
       {/* Quick AI Tools */}
       <section className="mb-6">
         <div className="mb-3">
-          <h3 className="text-sm font-semibold text-slate-900">
+          <h3 className="text-sm font-semibold text-white">
             Quick AI Tools
           </h3>
 
@@ -267,29 +245,14 @@ export default function AIStudyPanel({
             type="button"
             onClick={summarizeNote}
             disabled={isLoading || !content.trim()}
-            className="rounded-xl border border-slate-200 bg-white px-3 py-3 text-left transition hover:border-indigo-200 hover:bg-indigo-50/40 disabled:cursor-not-allowed disabled:opacity-50"
+            className="rounded-2xl border border-white/10 bg-white/5 px-3 py-3 text-left transition hover:border-violet-400/25 hover:bg-white/8 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <span className="block text-sm font-semibold text-slate-800">
+            <span className="block text-sm font-semibold text-white">
               Summarize
             </span>
 
             <span className="mt-1 block text-xs leading-5 text-slate-400">
               Turn your note into a concise summary.
-            </span>
-          </button>
-
-          <button
-            type="button"
-            onClick={getFeedback}
-            disabled={isLoading || !content.trim()}
-            className="rounded-xl border border-slate-200 bg-white px-3 py-3 text-left transition hover:border-indigo-200 hover:bg-indigo-50/40 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <span className="block text-sm font-semibold text-slate-800">
-              Get Feedback
-            </span>
-
-            <span className="mt-1 block text-xs leading-5 text-slate-400">
-              Get suggestions to improve your notes.
             </span>
           </button>
         </div>
@@ -298,7 +261,7 @@ export default function AIStudyPanel({
       {/* Ask AI */}
       <section>
         <div className="mb-3">
-          <h3 className="text-sm font-semibold text-slate-900">
+          <h3 className="text-sm font-semibold text-white">
             Ask AI
           </h3>
 
@@ -312,14 +275,14 @@ export default function AIStudyPanel({
           onChange={(event) => setQuestion(event.target.value)}
           placeholder="e.g. Explain event bubbling with a simple example."
           rows={4}
-          className="min-h-[110px] w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-3 text-sm leading-6 text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:bg-white focus:ring-4 focus:ring-indigo-50"
+          className="min-h-[110px] w-full resize-y rounded-2xl border border-white/10 bg-white/5 px-3.5 py-3 text-sm leading-6 text-white outline-none transition placeholder:text-slate-500 focus:border-violet-400/40 focus:bg-white/8 focus:ring-4 focus:ring-violet-500/10"
         />
 
         <button
           type="button"
           onClick={askAssistant}
           disabled={isLoading || !question.trim()}
-          className="mt-3 w-full rounded-xl border border-indigo-200 bg-indigo-50 px-4 py-3 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-3 w-full rounded-2xl border border-violet-400/20 bg-violet-500/10 px-4 py-3 text-sm font-semibold text-violet-200 transition hover:bg-violet-500/15 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {activeAction === "assistant"
             ? "Thinking..."
@@ -328,7 +291,7 @@ export default function AIStudyPanel({
       </section>
 
       {/* Footer */}
-      <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
+      <div className="mt-6 flex items-center justify-between border-t border-white/8 pt-4">
         <p className="text-[11px] leading-4 text-slate-400">
           AI responses may need verification.
         </p>
@@ -337,7 +300,7 @@ export default function AIStudyPanel({
           type="button"
           onClick={handleClear}
           disabled={isLoading}
-          className="text-xs font-medium text-slate-400 transition hover:text-slate-700 disabled:opacity-50"
+          className="text-xs font-medium text-slate-400 transition hover:text-white disabled:opacity-50"
         >
           Reset
         </button>

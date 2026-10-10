@@ -71,14 +71,14 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="app-page min-h-screen bg-[#0f1115] text-slate-100">
 
       <div className="flex min-h-screen">
 
         {/* =================================================
             LEFT PROMOTIONAL PANEL
         ================================================== */}
-        <section className="relative hidden w-1/2 overflow-hidden bg-slate-950 lg:flex">
+        <section className="app-surface-strong relative hidden w-1/2 overflow-hidden bg-[#11151d] lg:flex">
 
           <div className="relative z-10 flex w-full flex-col justify-between p-12 xl:p-16">
 
@@ -87,7 +87,7 @@ const Login = () => {
               to="/"
               className="flex items-center gap-3"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-sm font-bold text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500 text-sm font-bold text-white shadow-lg shadow-violet-500/20">
                 S
               </div>
 
@@ -96,7 +96,7 @@ const Login = () => {
                   StudyMate
                 </p>
 
-                <p className="text-[10px] text-slate-400">
+                <p className="text-[10px] text-slate-500">
                   AI-powered learning
                 </p>
               </div>
@@ -106,7 +106,7 @@ const Login = () => {
             {/* Main */}
             <div className="max-w-xl">
 
-              <span className="inline-flex rounded-full border border-indigo-400/20 bg-indigo-400/10 px-3 py-1 text-xs font-semibold text-indigo-300">
+              <span className="inline-flex rounded-full border border-violet-400/15 bg-white/5 px-3 py-1 text-xs font-semibold text-violet-200">
                 AI-powered study workspace
               </span>
 
@@ -128,14 +128,14 @@ const Login = () => {
                 {[
                   "Create and organize study notes",
                   "Generate and summarize content with AI",
-                  "Get personalized feedback while learning",
+                  "Get clearer explanations while learning",
                 ].map((feature) => (
                   <div
                     key={feature}
                     className="flex items-center gap-3"
                   >
 
-                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/15 text-xs text-indigo-300">
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/15 text-xs text-violet-200">
                       ✓
                     </div>
 
@@ -164,9 +164,9 @@ const Login = () => {
         {/* =================================================
             RIGHT AUTH PANEL
         ================================================== */}
-        <main className="flex min-h-screen w-full items-center justify-center bg-white px-5 py-10 sm:px-8 lg:w-1/2">
+        <main className="app-page flex min-h-screen w-full items-center justify-center bg-[#0f1115] px-5 py-10 sm:px-8 lg:w-1/2">
 
-          <div className="w-full max-w-md">
+          <div className="w-full max-w-md rounded-3xl border border-white/10 bg-[#141821] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-8">
 
             {/* Mobile logo */}
             <div className="mb-10 lg:hidden">
@@ -176,16 +176,16 @@ const Login = () => {
                 className="inline-flex items-center gap-3"
               >
 
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-sm font-bold text-white">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500 text-sm font-bold text-white shadow-lg shadow-violet-500/20">
                   S
                 </div>
 
                 <div>
-                  <p className="font-bold text-slate-900">
+                  <p className="font-bold text-white">
                     StudyMate
                   </p>
 
-                  <p className="text-[10px] text-slate-400">
+                  <p className="text-[10px] text-slate-500">
                     AI-powered learning
                   </p>
                 </div>
@@ -198,15 +198,15 @@ const Login = () => {
             {/* Heading */}
             <div>
 
-              <span className="text-sm font-semibold text-indigo-600">
+              <span className="text-sm font-semibold text-violet-300">
                 Welcome back
               </span>
 
-              <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900">
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-white">
                 Sign in to StudyMate
               </h2>
 
-              <p className="mt-2 text-sm leading-6 text-slate-500">
+              <p className="mt-2 text-sm leading-6 text-slate-400">
                 Continue your learning journey and access your
                 notes and AI study tools.
               </p>
@@ -216,9 +216,9 @@ const Login = () => {
 
             {/* Error */}
             {error && (
-              <div className="mt-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3">
+              <div className="mt-6 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3">
 
-                <p className="text-sm font-medium leading-5 text-red-700">
+                <p className="text-sm font-medium leading-5 text-red-100">
                   {error}
                 </p>
 
@@ -237,7 +237,7 @@ const Login = () => {
 
                 <label
                   htmlFor="email"
-                  className="mb-2 block text-sm font-semibold text-slate-800"
+                  className="mb-2 block text-sm font-semibold text-slate-200"
                 >
                   Email address
                 </label>
@@ -250,7 +250,7 @@ const Login = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="you@example.com"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:bg-white focus:ring-4 focus:ring-indigo-50"
+                  className="app-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-violet-400/40 focus:bg-white/8 focus:ring-4 focus:ring-violet-500/10"
                 />
 
               </div>
@@ -263,7 +263,7 @@ const Login = () => {
 
                   <label
                     htmlFor="password"
-                    className="text-sm font-semibold text-slate-800"
+                    className="text-sm font-semibold text-slate-200"
                   >
                     Password
                   </label>
@@ -280,7 +280,7 @@ const Login = () => {
                     value={formData.password}
                     onChange={handleChange}
                     placeholder="Enter your password"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 pr-20 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:bg-white focus:ring-4 focus:ring-indigo-50"
+                    className="app-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pr-20 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-violet-400/40 focus:bg-white/8 focus:ring-4 focus:ring-violet-500/10"
                   />
 
                   <button
@@ -288,7 +288,7 @@ const Login = () => {
                     onClick={() =>
                       setShowPassword((prev) => !prev)
                     }
-                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg px-2 py-1 text-xs font-semibold text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg px-2 py-1 text-xs font-semibold text-slate-400 transition hover:bg-white/5 hover:text-white"
                   >
                     {showPassword ? "Hide" : "Show"}
                   </button>
@@ -302,7 +302,7 @@ const Login = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
+                className="w-full rounded-xl bg-violet-500 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-400 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading ? "Signing in..." : "Sign In"}
               </button>
@@ -311,13 +311,13 @@ const Login = () => {
 
 
             {/* Signup */}
-            <div className="mt-7 border-t border-slate-100 pt-6 text-center">
+            <div className="mt-7 border-t border-white/10 pt-6 text-center">
 
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-slate-400">
                 Don't have an account?{" "}
                 <Link
                   to="/signup"
-                  className="font-semibold text-indigo-600 transition hover:text-indigo-700"
+                  className="font-semibold text-violet-300 transition hover:text-violet-200"
                 >
                   Create one
                 </Link>
@@ -331,7 +331,7 @@ const Login = () => {
 
               <Link
                 to="/"
-                className="text-xs font-medium text-slate-400 transition hover:text-slate-700"
+                className="text-xs font-medium text-slate-500 transition hover:text-white"
               >
                 ← Back to homepage
               </Link>

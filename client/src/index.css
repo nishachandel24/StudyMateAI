@@ -1,21 +1,49 @@
 @import "tailwindcss";
 
 /* =========================================================
-   StudyMate AI - Global UI Polish
+   StudyMate AI - Global UI Foundation
 ========================================================= */
+
+:root {
+  color-scheme: dark;
+  --app-bg: #0f1115;
+  --app-bg-elevated: #141821;
+  --app-bg-surface: #11151d;
+  --app-text: #e7e9ee;
+  --app-muted: #9aa3b2;
+  --app-border: rgba(255, 255, 255, 0.1);
+  --app-accent: #a78bfa;
+  --app-accent-strong: #8b5cf6;
+  --app-accent-soft: rgba(139, 92, 246, 0.12);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --app-bg: #f6f8fc;
+  --app-bg-elevated: #ffffff;
+  --app-bg-surface: #eef3fb;
+  --app-text: #102033;
+  --app-muted: #5f7086;
+  --app-border: rgba(15, 23, 42, 0.12);
+  --app-accent: #4f46e5;
+  --app-accent-strong: #4338ca;
+  --app-accent-soft: rgba(79, 70, 229, 0.12);
+}
 
 html {
   scroll-behavior: smooth;
+  background: var(--app-bg);
 }
 
 body {
   margin: 0;
   min-width: 320px;
   overflow-x: hidden;
-  background: #f8fafc;
-  color: #0f172a;
+  background:
+    radial-gradient(circle at top, color-mix(in srgb, var(--app-accent) 18%, transparent), transparent 28%),
+    linear-gradient(180deg, color-mix(in srgb, var(--app-bg-surface) 82%, black) 0%, var(--app-bg) 45%, #0b0d10 100%);
+  color: var(--app-text);
   font-family:
-    Inter,
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -24,10 +52,17 @@ body {
     sans-serif;
 }
 
+:root[data-theme="light"] body {
+  background:
+    radial-gradient(circle at top, rgba(79, 70, 229, 0.13), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f7f9fd 44%, #edf2fb 100%);
+  color: var(--app-text);
+}
+
 /* Better text selection */
 ::selection {
-  background: #e0e7ff;
-  color: #312e81;
+  background: color-mix(in srgb, var(--app-accent) 32%, transparent);
+  color: #ffffff;
 }
 
 /* Better keyboard accessibility */
@@ -36,7 +71,7 @@ a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid var(--app-accent);
   outline-offset: 2px;
 }
 
@@ -47,16 +82,16 @@ select:focus-visible {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: var(--app-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: color-mix(in srgb, var(--app-text) 18%, transparent);
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: color-mix(in srgb, var(--app-text) 28%, transparent);
 }
 
 /* Prevent images from overflowing */
@@ -69,6 +104,126 @@ img {
    from breaking layouts */
 * {
   overflow-wrap: break-word;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-page {
+  background: var(--app-bg) !important;
+  color: var(--app-text) !important;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.app-surface {
+  background: var(--app-bg-elevated) !important;
+  border-color: var(--app-border) !important;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.app-surface-strong {
+  background: var(--app-bg-surface) !important;
+  border-color: var(--app-border) !important;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.app-input {
+  background: color-mix(in srgb, var(--app-bg-elevated) 92%, black) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.app-input::placeholder {
+  color: var(--app-muted) !important;
+}
+
+.app-toggle {
+  background: color-mix(in srgb, var(--app-bg-elevated) 90%, black) !important;
+  color: var(--app-text) !important;
+  border: 1px solid var(--app-border) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.app-toggle:hover {
+  border-color: color-mix(in srgb, var(--app-accent) 45%, var(--app-border));
+}
+
+.app-float-toggle {
+  background: color-mix(in srgb, var(--app-bg-elevated) 88%, black) !important;
+  color: var(--app-text) !important;
+  border: 1px solid var(--app-border) !important;
+  backdrop-filter: blur(16px);
+}
+
+:root[data-theme="light"] .app-float-toggle {
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.12);
+}
+
+:root[data-theme="light"] .app-page [class*="text-white"] {
+  color: var(--app-text) !important;
+}
+
+:root[data-theme="light"] .app-page [class*="text-slate-100"] {
+  color: var(--app-text) !important;
+}
+
+:root[data-theme="light"] .app-page [class*="text-slate-200"] {
+  color: color-mix(in srgb, var(--app-text) 90%, white) !important;
+}
+
+:root[data-theme="light"] .app-page [class*="text-slate-300"] {
+  color: color-mix(in srgb, var(--app-text) 76%, white) !important;
+}
+
+:root[data-theme="light"] .app-page [class*="text-slate-400"] {
+  color: var(--app-muted) !important;
+}
+
+:root[data-theme="light"] .app-page [class*="text-slate-500"] {
+  color: color-mix(in srgb, var(--app-muted) 86%, white) !important;
+}
+
+:root[data-theme="light"] .app-page [class*="bg-white/5"],
+:root[data-theme="light"] .app-page [class*="bg-white/8"] {
+  background-color: color-mix(in srgb, var(--app-bg-elevated) 80%, var(--app-bg)) !important;
+}
+
+:root[data-theme="light"] .app-page [class*="border-white/10"],
+:root[data-theme="light"] .app-page [class*="border-white/15"] {
+  border-color: var(--app-border) !important;
+}
+
+:root[data-theme="light"] .app-page [class*="bg-[#11151d]"],
+:root[data-theme="light"] .app-page [class*="bg-[#141821]"],
+:root[data-theme="light"] .app-page [class*="bg-[#0f1115]"] {
+  background-color: var(--app-bg-elevated) !important;
+}
+
+:root[data-theme="light"] .app-page [class*="bg-[#0f1115]"] {
+  background-color: var(--app-bg) !important;
 }
 
 /* Better mobile tap targets */

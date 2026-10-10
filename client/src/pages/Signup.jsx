@@ -104,14 +104,14 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="app-page min-h-screen bg-[#0f1115] text-slate-100">
 
       <div className="flex min-h-screen">
 
         {/* =================================================
             LEFT PROMOTIONAL PANEL
         ================================================== */}
-        <section className="relative hidden w-1/2 overflow-hidden bg-slate-950 lg:flex">
+        <section className="app-surface-strong relative hidden w-1/2 overflow-hidden bg-[#11151d] lg:flex">
 
           <div className="relative z-10 flex w-full flex-col justify-between p-12 xl:p-16">
 
@@ -120,7 +120,7 @@ const Signup = () => {
               to="/"
               className="flex items-center gap-3"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-sm font-bold text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500 text-sm font-bold text-white shadow-lg shadow-violet-500/20">
                 S
               </div>
 
@@ -129,7 +129,7 @@ const Signup = () => {
                   StudyMate
                 </p>
 
-                <p className="text-[10px] text-slate-400">
+                <p className="text-[10px] text-slate-500">
                   AI-powered learning
                 </p>
               </div>
@@ -139,7 +139,7 @@ const Signup = () => {
             {/* Main */}
             <div className="max-w-xl">
 
-              <span className="inline-flex rounded-full border border-indigo-400/20 bg-indigo-400/10 px-3 py-1 text-xs font-semibold text-indigo-300">
+              <span className="inline-flex rounded-full border border-violet-400/15 bg-white/5 px-3 py-1 text-xs font-semibold text-violet-200">
                 Start learning smarter
               </span>
 
@@ -167,7 +167,7 @@ const Signup = () => {
                     key={feature}
                     className="flex items-center gap-3"
                   >
-                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/15 text-xs text-indigo-300">
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/15 text-xs text-violet-200">
                       ✓
                     </div>
 
@@ -195,9 +195,9 @@ const Signup = () => {
         {/* =================================================
             RIGHT FORM
         ================================================== */}
-        <main className="flex min-h-screen w-full items-center justify-center bg-white px-5 py-10 sm:px-8 lg:w-1/2">
+        <main className="app-page flex min-h-screen w-full items-center justify-center bg-[#0f1115] px-5 py-10 sm:px-8 lg:w-1/2">
 
-          <div className="w-full max-w-md">
+          <div className="app-surface w-full max-w-md rounded-3xl border border-white/10 bg-[#141821] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-8">
 
             {/* Mobile Logo */}
             <div className="mb-10 lg:hidden">
@@ -206,16 +206,16 @@ const Signup = () => {
                 to="/"
                 className="inline-flex items-center gap-3"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-sm font-bold text-white">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500 text-sm font-bold text-white shadow-lg shadow-violet-500/20">
                   S
                 </div>
 
                 <div>
-                  <p className="font-bold text-slate-900">
+                  <p className="font-bold text-white">
                     StudyMate
                   </p>
 
-                  <p className="text-[10px] text-slate-400">
+                  <p className="text-[10px] text-slate-500">
                     AI-powered learning
                   </p>
                 </div>
@@ -227,15 +227,15 @@ const Signup = () => {
             {/* Heading */}
             <div>
 
-              <span className="text-sm font-semibold text-indigo-600">
+              <span className="text-sm font-semibold text-violet-300">
                 Get started
               </span>
 
-              <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900">
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-white">
                 Create your account
               </h2>
 
-              <p className="mt-2 text-sm leading-6 text-slate-500">
+              <p className="mt-2 text-sm leading-6 text-slate-400">
                 Create your StudyMate account and start building
                 a smarter study workflow.
               </p>
@@ -245,8 +245,8 @@ const Signup = () => {
 
             {/* Error */}
             {error && (
-              <div className="mt-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3">
-                <p className="text-sm font-medium leading-5 text-red-700">
+              <div className="mt-6 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3">
+                <p className="text-sm font-medium leading-5 text-red-100">
                   {error}
                 </p>
               </div>
@@ -264,7 +264,7 @@ const Signup = () => {
 
                 <label
                   htmlFor="name"
-                  className="mb-2 block text-sm font-semibold text-slate-800"
+                  className="mb-2 block text-sm font-semibold text-slate-200"
                 >
                   Full name
                 </label>
@@ -277,7 +277,7 @@ const Signup = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Enter your name"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:bg-white focus:ring-4 focus:ring-indigo-50"
+                  className="app-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-violet-400/40 focus:bg-white/8 focus:ring-4 focus:ring-violet-500/10"
                 />
 
               </div>
@@ -288,7 +288,7 @@ const Signup = () => {
 
                 <label
                   htmlFor="email"
-                  className="mb-2 block text-sm font-semibold text-slate-800"
+                  className="mb-2 block text-sm font-semibold text-slate-200"
                 >
                   Email address
                 </label>
@@ -301,7 +301,7 @@ const Signup = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="you@example.com"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:bg-white focus:ring-4 focus:ring-indigo-50"
+                  className="app-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-violet-400/40 focus:bg-white/8 focus:ring-4 focus:ring-violet-500/10"
                 />
 
               </div>
@@ -312,7 +312,7 @@ const Signup = () => {
 
                 <label
                   htmlFor="password"
-                  className="mb-2 block text-sm font-semibold text-slate-800"
+                  className="mb-2 block text-sm font-semibold text-slate-200"
                 >
                   Password
                 </label>
@@ -327,7 +327,7 @@ const Signup = () => {
                     value={formData.password}
                     onChange={handleChange}
                     placeholder="Create a password"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 pr-20 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:bg-white focus:ring-4 focus:ring-indigo-50"
+                    className="app-input w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pr-20 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-violet-400/40 focus:bg-white/8 focus:ring-4 focus:ring-violet-500/10"
                   />
 
                   <button
@@ -335,7 +335,7 @@ const Signup = () => {
                     onClick={() =>
                       setShowPassword((prev) => !prev)
                     }
-                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg px-2 py-1 text-xs font-semibold text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg px-2 py-1 text-xs font-semibold text-slate-400 transition hover:bg-white/5 hover:text-white"
                   >
                     {showPassword ? "Hide" : "Show"}
                   </button>
@@ -355,7 +355,7 @@ const Signup = () => {
 
                 <label
                   htmlFor="confirmPassword"
-                  className="mb-2 block text-sm font-semibold text-slate-800"
+                  className="mb-2 block text-sm font-semibold text-slate-200"
                 >
                   Confirm password
                 </label>
@@ -374,16 +374,16 @@ const Signup = () => {
                     value={formData.confirmPassword}
                     onChange={handleChange}
                     placeholder="Re-enter your password"
-                    className={`w-full rounded-xl border bg-slate-50 px-4 py-3 pr-20 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:bg-white focus:ring-4 ${
+                    className={`app-input w-full rounded-xl border bg-white/5 px-4 py-3 pr-20 text-sm text-white outline-none transition placeholder:text-slate-500 focus:bg-white/8 focus:ring-4 ${
                       formData.confirmPassword &&
                       formData.password !==
                         formData.confirmPassword
-                        ? "border-red-300 focus:border-red-400 focus:ring-red-50"
+                          ? "border-red-400/40 focus:border-red-400 focus:ring-red-500/10"
                         : formData.confirmPassword &&
                           formData.password ===
                             formData.confirmPassword
-                        ? "border-emerald-300 focus:border-emerald-400 focus:ring-emerald-50"
-                        : "border-slate-200 focus:border-indigo-400 focus:ring-indigo-50"
+                          ? "border-emerald-400/40 focus:border-emerald-400 focus:ring-emerald-500/10"
+                          : "border-white/10 focus:border-violet-400/40 focus:ring-violet-500/10"
                     }`}
                   />
 
@@ -394,7 +394,7 @@ const Signup = () => {
                         (prev) => !prev
                       )
                     }
-                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg px-2 py-1 text-xs font-semibold text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg px-2 py-1 text-xs font-semibold text-slate-400 transition hover:bg-white/5 hover:text-white"
                   >
                     {showConfirmPassword ? "Hide" : "Show"}
                   </button>
@@ -407,8 +407,8 @@ const Signup = () => {
                     className={`mt-2 text-xs font-medium ${
                       formData.password ===
                       formData.confirmPassword
-                        ? "text-emerald-600"
-                        : "text-red-600"
+                        ? "text-emerald-300"
+                        : "text-red-300"
                     }`}
                   >
                     {formData.password ===
@@ -425,7 +425,7 @@ const Signup = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
+                className="w-full rounded-xl bg-violet-500 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-400 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading
                   ? "Creating account..."
@@ -436,13 +436,13 @@ const Signup = () => {
 
 
             {/* Login */}
-            <div className="mt-7 border-t border-slate-100 pt-6 text-center">
+            <div className="mt-7 border-t border-white/10 pt-6 text-center">
 
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-slate-400">
                 Already have an account?{" "}
                 <Link
                   to="/login"
-                  className="font-semibold text-indigo-600 transition hover:text-indigo-700"
+                  className="font-semibold text-violet-300 transition hover:text-violet-200"
                 >
                   Sign in
                 </Link>
@@ -456,7 +456,7 @@ const Signup = () => {
 
               <Link
                 to="/"
-                className="text-xs font-medium text-slate-400 transition hover:text-slate-700"
+                className="text-xs font-medium text-slate-500 transition hover:text-white"
               >
                 ← Back to homepage
               </Link>

@@ -122,12 +122,12 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900">
+    <div className="app-page min-h-screen overflow-x-hidden bg-[#0f1115] text-slate-100">
 
       {/* =====================================================
           NAVBAR
       ====================================================== */}
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white">
+      <header className="app-surface-strong sticky top-0 z-30 border-b border-white/10 bg-[#11151d]/95 backdrop-blur-xl">
 
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
@@ -136,16 +136,16 @@ const Dashboard = () => {
             to="/dashboard"
             className="flex min-w-0 items-center gap-3"
           >
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-sm font-bold text-white shadow-sm">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-500 text-sm font-bold text-white shadow-lg shadow-violet-500/20">
               S
             </div>
 
             <div className="min-w-0">
-              <p className="text-sm font-bold tracking-tight text-slate-900">
+              <p className="text-sm font-bold tracking-tight text-white">
                 StudyMate
               </p>
 
-              <p className="hidden text-[10px] font-medium text-slate-500 sm:block">
+              <p className="hidden text-[10px] font-medium text-slate-400 sm:block">
                 AI-powered learning
               </p>
             </div>
@@ -155,22 +155,22 @@ const Dashboard = () => {
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
 
             <div className="hidden text-right sm:block">
-              <p className="text-sm font-semibold text-slate-800">
+              <p className="text-sm font-semibold text-slate-100">
                 {user?.name || "Student"}
               </p>
 
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-400">
                 Student
               </p>
             </div>
 
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-100 text-sm font-bold text-indigo-700">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-violet-500/10 text-sm font-bold text-violet-200 ring-1 ring-inset ring-violet-400/20">
               {firstName.charAt(0).toUpperCase()}
             </div>
 
             <button
               onClick={handleLogout}
-              className="rounded-lg border border-slate-200 px-2.5 py-2 text-xs font-medium text-slate-600 transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900 sm:px-3 sm:text-sm"
+              className="rounded-lg border border-white/10 px-2.5 py-2 text-xs font-medium text-slate-300 transition hover:border-white/20 hover:bg-white/5 hover:text-white sm:px-3 sm:text-sm"
             >
               Logout
             </button>
@@ -194,15 +194,15 @@ const Dashboard = () => {
 
             <div className="min-w-0">
 
-              <p className="mb-2 text-sm font-medium text-indigo-600">
+              <p className="mb-2 text-sm font-medium text-violet-300">
                 Your learning workspace
               </p>
 
-              <h1 className="break-words text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              <h1 className="break-words text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Welcome back, {firstName}.
               </h1>
 
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base">
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base">
                 Organize your notes, review what you have learned,
                 and use AI to study more effectively.
               </p>
@@ -211,7 +211,7 @@ const Dashboard = () => {
 
             <Link
               to="/notes/new"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 hover:shadow-md"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-violet-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-400"
             >
               <span className="text-lg leading-none">
                 +
@@ -230,27 +230,27 @@ const Dashboard = () => {
         <section className="mb-10 grid min-w-0 gap-4 sm:grid-cols-3">
 
           {/* Total Notes */}
-          <div className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div className="app-surface min-w-0 rounded-2xl border border-white/10 bg-[#141821] p-5 shadow-[0_16px_40px_rgba(0,0,0,0.28)]">
 
             <div className="flex items-start justify-between gap-4">
 
               <div className="min-w-0">
 
-                <p className="text-sm font-medium text-slate-500">
+                <p className="text-sm font-medium text-slate-400">
                   Total Notes
                 </p>
 
-                <p className="mt-2 text-3xl font-bold tracking-tight text-slate-900">
+                <p className="mt-2 text-3xl font-bold tracking-tight text-white">
                   {notes.length}
                 </p>
 
-                <p className="mt-1 truncate text-xs text-slate-400">
+                <p className="mt-1 truncate text-xs text-slate-500">
                   Notes in your workspace
                 </p>
 
               </div>
 
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-lg">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-500/10 text-lg ring-1 ring-inset ring-violet-400/15">
                 📝
               </div>
 
@@ -259,27 +259,27 @@ const Dashboard = () => {
 
 
           {/* Recent Notes */}
-          <div className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div className="app-surface min-w-0 rounded-2xl border border-white/10 bg-[#141821] p-5 shadow-[0_16px_40px_rgba(0,0,0,0.28)]">
 
             <div className="flex items-start justify-between gap-4">
 
               <div className="min-w-0">
 
-                <p className="text-sm font-medium text-slate-500">
+                 <p className="text-sm font-medium text-slate-400">
                   Recent Notes
                 </p>
 
-                <p className="mt-2 text-3xl font-bold tracking-tight text-slate-900">
+                 <p className="mt-2 text-3xl font-bold tracking-tight text-white">
                    {recentNotesCount}
                 </p>
 
-                <p className="mt-1 truncate text-xs text-slate-400">
+                 <p className="mt-1 truncate text-xs text-slate-500">
                    Updated in the last 7 days
                 </p>
 
               </div>
 
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-lg">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-500/10 text-lg ring-1 ring-inset ring-violet-400/15">
                 ✨
               </div>
 
@@ -288,27 +288,27 @@ const Dashboard = () => {
 
 
           {/* AI Tools */}
-          <div className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div className="app-surface min-w-0 rounded-2xl border border-white/10 bg-[#141821] p-5 shadow-[0_16px_40px_rgba(0,0,0,0.28)]">
 
             <div className="flex items-start justify-between gap-4">
 
               <div className="min-w-0">
 
-                <p className="text-sm font-medium text-slate-500">
+                <p className="text-sm font-medium text-slate-400">
                   AI Study Tools
                 </p>
 
-                <p className="mt-2 text-3xl font-bold tracking-tight text-slate-900">
-                  4
+                <p className="mt-2 text-3xl font-bold tracking-tight text-white">
+                  3
                 </p>
 
-                <p className="mt-1 truncate text-xs text-slate-400">
+                <p className="mt-1 truncate text-xs text-slate-500">
                   Tools available for learning
                 </p>
 
               </div>
 
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-sm font-semibold text-emerald-600">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-sm font-semibold text-emerald-300 ring-1 ring-inset ring-emerald-400/15">
                 AI
               </div>
 
@@ -327,11 +327,11 @@ const Dashboard = () => {
 
             <div className="min-w-0">
 
-              <h2 className="text-xl font-bold tracking-tight text-slate-900">
+              <h2 className="text-xl font-bold tracking-tight text-white">
                 Your Notes
               </h2>
 
-              <p className="mt-1 text-sm text-slate-500">
+              <p className="mt-1 text-sm text-slate-400">
                 Keep your study material organized in one place.
               </p>
 
@@ -342,7 +342,7 @@ const Dashboard = () => {
             <div className="relative w-full shrink-0 sm:w-72">
 
               <svg
-                className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+                className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -362,7 +362,7 @@ const Dashboard = () => {
                   setSearch(event.target.value)
                 }
                 placeholder="Search notes..."
-                className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-50"
+                className="app-input w-full rounded-xl border border-white/10 bg-[#141821] py-2.5 pl-10 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-violet-400/40 focus:ring-4 focus:ring-violet-500/10"
               />
 
             </div>
@@ -379,15 +379,15 @@ const Dashboard = () => {
               {[1, 2, 3].map((item) => (
                 <div
                   key={item}
-                  className="min-w-0 animate-pulse rounded-2xl border border-slate-200 bg-white p-6"
+                  className="app-surface min-w-0 animate-pulse rounded-2xl border border-white/10 bg-[#141821] p-6"
                 >
-                  <div className="mb-4 h-5 w-2/3 rounded bg-slate-200" />
+                    <div className="mb-4 h-5 w-2/3 rounded bg-white/10" />
 
-                  <div className="mb-2 h-3 w-full rounded bg-slate-100" />
+                    <div className="mb-2 h-3 w-full rounded bg-white/8" />
 
-                  <div className="mb-2 h-3 w-5/6 rounded bg-slate-100" />
+                    <div className="mb-2 h-3 w-5/6 rounded bg-white/8" />
 
-                  <div className="mt-6 h-3 w-1/3 rounded bg-slate-100" />
+                    <div className="mt-6 h-3 w-1/3 rounded bg-white/8" />
                 </div>
               ))}
 
@@ -399,19 +399,19 @@ const Dashboard = () => {
               ERROR
           ================================================== */}
           {!loading && error && (
-            <div className="rounded-2xl border border-red-200 bg-red-50 p-6">
+              <div className="app-surface rounded-2xl border border-red-500/20 bg-red-500/10 p-6 text-red-100">
 
-              <p className="font-semibold text-red-800">
+              <p className="font-semibold text-red-100">
                 Unable to load notes
               </p>
 
-              <p className="mt-1 text-sm text-red-600">
+              <p className="mt-1 text-sm text-red-200/90">
                 {error}
               </p>
 
               <button
                 onClick={fetchNotes}
-                className="mt-4 rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700"
+                className="mt-4 rounded-lg bg-red-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-400"
               >
                 Try Again
               </button>
@@ -427,18 +427,18 @@ const Dashboard = () => {
             !error &&
             notes.length > 0 &&
             filteredNotes.length === 0 && (
-              <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-14 text-center">
+              <div className="app-surface rounded-2xl border border-dashed border-white/15 bg-[#141821] px-6 py-12 text-center">
 
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 text-xl">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-xl ring-1 ring-inset ring-white/10">
                   🔎
                 </div>
 
-                <h3 className="mt-4 text-base font-semibold text-slate-900">
-                  No notes found
+                <h3 className="mt-4 text-base font-semibold text-white">
+                  No notes yet
                 </h3>
 
-                <p className="mt-1 text-sm text-slate-500">
-                  Try searching with a different title or keyword.
+                <p className="mt-1 text-sm text-slate-400">
+                  Create your first note to start building your workspace.
                 </p>
 
               </div>
@@ -451,24 +451,24 @@ const Dashboard = () => {
           {!loading &&
             !error &&
             notes.length === 0 && (
-              <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center">
+              <div className="app-surface rounded-2xl border border-dashed border-white/15 bg-[#141821] px-6 py-14 text-center">
 
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-50 text-2xl">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-500/10 text-2xl ring-1 ring-inset ring-violet-400/15">
                   📝
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-white">
                   Start your first note
                 </h3>
 
-                <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
-                  Create your first study note and use StudyMate AI
-                  to summarize it, generate feedback, or ask questions.
+                <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-400">
+                  Create your first note and use StudyMate AI to
+                  summarize it or ask questions.
                 </p>
 
                 <Link
                   to="/notes/new"
-                  className="mt-6 inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700"
+                  className="mt-6 inline-flex items-center gap-2 rounded-xl bg-violet-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-violet-400"
                 >
                   <span className="text-lg leading-none">
                     +
@@ -492,7 +492,7 @@ const Dashboard = () => {
                 {filteredNotes.map((note) => (
                   <article
                     key={note._id}
-                    className="group flex min-h-[240px] min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md sm:p-6"
+                    className="app-surface group flex min-h-[240px] min-w-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#141821] p-5 shadow-[0_16px_40px_rgba(0,0,0,0.28)] transition duration-200 hover:-translate-y-0.5 hover:border-violet-400/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)] sm:p-6"
                   >
 
                     {/* Card Header */}
@@ -502,18 +502,18 @@ const Dashboard = () => {
 
                         <h3
                           title={note.title}
-                          className="truncate text-base font-bold text-slate-900"
+                          className="truncate text-base font-bold text-white"
                         >
                           {note.title}
                         </h3>
 
-                        <p className="mt-1 text-xs font-medium text-slate-400">
+                        <p className="mt-1 text-xs font-medium text-slate-500">
                           Updated {formatDate(note.updatedAt)}
                         </p>
 
                       </div>
 
-                      <span className="shrink-0 rounded-lg bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-600">
+                      <span className="shrink-0 rounded-lg bg-violet-500/10 px-2.5 py-1 text-xs font-semibold text-violet-200 ring-1 ring-inset ring-violet-400/15">
                         Note
                       </span>
 
@@ -525,7 +525,7 @@ const Dashboard = () => {
 
                       <p
                         title={getPreview(note.content)}
-                        className="break-words text-sm leading-6 text-slate-500 line-clamp-4"
+                        className="break-words text-sm leading-6 text-slate-300 line-clamp-4"
                         style={{
                            overflowWrap: "anywhere",
                            wordBreak: "break-word",
@@ -538,11 +538,11 @@ const Dashboard = () => {
 
 
                     {/* Card Footer */}
-                    <div className="mt-5 flex min-w-0 items-center justify-between gap-3 border-t border-slate-100 pt-4">
+                    <div className="mt-5 flex min-w-0 items-center justify-between gap-3 border-t border-white/10 pt-4">
 
                       <Link
                         to={`/notes/${note._id}`}
-                        className="min-w-0 truncate text-sm font-semibold text-indigo-600 transition hover:text-indigo-700"
+                        className="min-w-0 truncate text-sm font-semibold text-violet-300 transition hover:text-violet-200"
                       >
                         Open note →
                       </Link>
@@ -550,7 +550,7 @@ const Dashboard = () => {
                       <button
                         onClick={() => handleDelete(note._id)}
                         disabled={deletingId === note._id}
-                        className="shrink-0 rounded-lg px-2.5 py-1.5 text-xs font-medium text-slate-400 transition hover:bg-red-50 hover:text-red-600 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="shrink-0 rounded-lg px-2.5 py-1.5 text-xs font-medium text-slate-400 transition hover:bg-red-500/10 hover:text-red-300 disabled:cursor-not-allowed disabled:opacity-50"
                       >
                         {deletingId === note._id
                           ? "Deleting..."
